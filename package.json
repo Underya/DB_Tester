@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "node": "^20.2.0",
+    "request": "^2.88.2",
+    "test": "^3.3.0"
+  }
+}
