@@ -16,6 +16,21 @@
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
             ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Test",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run-script",
+                "test:vscode"
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
         }
     ]
 }
