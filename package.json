@@ -6,5 +6,8 @@
     "node": "^20.2.0",
     "request": "^2.88.2",
     "test": "^3.3.0"
+  },
+  "dependencies": {
+    "mssql": "^9.1.1"
   }
 }
