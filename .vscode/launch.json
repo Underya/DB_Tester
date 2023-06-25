@@ -24,6 +24,10 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
+            "preLaunchTask": "tsc: build - tsconfig.json",
+            "outFiles": [
+                "${workspaceFolder}/**/*.js"
+            ],
             "runtimeExecutable": "npm",
             "runtimeArgs": [
                 "run-script",
