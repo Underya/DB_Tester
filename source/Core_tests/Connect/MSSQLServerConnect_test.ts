@@ -6,9 +6,9 @@ function CreateConnect() : IConnect {
     return new MSSQLServerConnect();
 }
 
-test('Open Connect', (t) => {
+test('Open Connect', async (t) => {
     let connect = CreateConnect();
 
-    connect.OpenConnect();
-    connect.CloseConnect();
+    await connect.OpenConnect();
+    await connect.CloseConnect();
 })

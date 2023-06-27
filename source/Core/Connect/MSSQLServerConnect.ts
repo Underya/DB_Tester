@@ -1,18 +1,16 @@
 import { IConnect } from "./IConnect";
-import { connect, query  } from "mssql"
+import { ConnectionPool, connect, query  } from "mssql"
 
 class MSSQLServerConnect implements IConnect {
 
-    OpenConnect(): void {
-        connect("Server=localhost,1433;Database=master;User Id=sa;Password=StrongPassword123!@#")
-            .then((connectionPool) => {
-                console.log(connectionPool);
-            })
-            
+    private _connectionPool : ConnectionPool | null = null;
+    
+    async OpenConnect(): Promise<void> {
+        this._connectionPool = await connect("Server=localhost,1433;Database=master;User Id=sa;Password=StrongPassword123!@#;trustServerCertificate=True");
     }
 
-    CloseConnect(): void {
-        
+    async CloseConnect(): Promise<void> {
+        await this._connectionPool!.close();
     }
 
 }
